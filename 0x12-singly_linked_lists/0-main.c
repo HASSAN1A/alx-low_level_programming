@@ -1,33 +1,7 @@
-#include "holberton.h"
+#include <stdlib.h>
+#include <string.h>
 #include <stdio.h>
-
-/**
- * simple_print_buffer - prints buffer in hexa
- * @buffer: the address of memory to print
- * @size: the size of the memory to print
- *
- * Return: Nothing.
- */
-void simple_print_buffer(char *buffer, unsigned int size)
-{
-        unsigned int i;
-
-        i = 0;
-        while (i < size)
-        {
-                if (i % 10)
-                {
-                        printf(" ");
-                }
-                if (!(i % 10) && i)
-                {
-                        printf("\n");
-                }
-                printf("0x%02x", buffer[i]);
-                i++;
-        }
-        printf("\n");
-}
+#include "lists.h"
 
 /**
  * main - check the code for ALX School students.
@@ -36,11 +10,31 @@ void simple_print_buffer(char *buffer, unsigned int size)
  */
 int main(void)
 {
-    char buffer[98] = {0x00};
+    list_t *head;
+    list_t *new;
+    list_t hello = {"World", 5, NULL};
+    size_t n;
 
-    simple_print_buffer(buffer, 98);
-    _memset(buffer, 0x01, 95);
-    printf("-------------------------------------------------\n");
-    simple_print_buffer(buffer, 98);    
+    head = &hello;
+    new = malloc(sizeof(list_t));
+    if (new == NULL)
+    {
+        printf("Error\n");
+        return (1);
+    }
+    new->str = strdup("Hello");
+    new->len = 5;
+    new->next = head;
+    head = new;
+    n = print_list(head);
+    printf("-> %lu elements\n", n);
+
+    printf("\n");
+    free(new->str);
+    new->str = NULL;
+    n = print_list(head);
+    printf("-> %lu elements\n", n);
+
+    free(new);
     return (0);
 }
