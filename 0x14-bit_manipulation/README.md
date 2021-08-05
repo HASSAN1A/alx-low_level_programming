@@ -1,45 +1,73 @@
-# C - Linked lista
-In this project, I practiced building and using singly linked lists in C while learning when and why to use linked lists versus arrays.
+# C - Bit manipulation
 
-## Tests:
-tests: Folder of test files. Provided by Holberton School.
-Header File:
-lists.h: Header file containing definitions and prototypes for all types and functions written for the project.
-Type/File	Definition/Prototype
-struct list_s	
-char *str
-unsigned int len
-struct list_s *next
-typedef list_t	struct list_s
-0-print_list.c	size_t print_list(const list_t *h);
-1-list_len.c	size_t list_len(const list_t *h);
-2-add_node.c	list_t *add_node(list_t **head, const char *str);
-3-add_node_end.c	list_t *add_node_end(list_t **head, const char *str);
-4-free_list.c	void free_list(list_t *head)
-Tasks:
-0. Print list
+This project made me learn bit manipulation and bit
+bit operators like `>>`, `<<`, `&`, `|`, and `^` in C.
 
-0-print_list.c: C function that prints all the elements of a list_t list.
-If str is NULL, the function prints [0] (nul).
-1. List length
 
-1-list_len.c: C function that returns the number of elements in a linked list_t list.
-2. Add node
 
-2-add_node.c: C function that adds a new node at the beginning a of a list_t list.
-If the function fails - returns NULL.
-Otherwise - returns the address of the new element.
-3. Add node at the end
 
-3-add_node_end.c: C function that adds a new node at the end of a linked list_t list.
-If the function fails - returns NULL.
-Otherwise - returns the address of the new element.
-4. Free list
 
-4-free_list.c: C function that frees a list_t list.
-5. The Hare and the Tortoise
+## Helper stdout File:
 
-100-first.c: C function that prints You're beat! and yet, you must allow,\nI bore my house upon my back!\n before the main function is executed.
-6. Real programmers can write assembly code in any language
+* [_putchar.c](./_putchar.c): C function that writes a character to `stdout`.
 
-101-hello_holberton.asm: 64-but assembly program that prints Hello, Holberton followed by a new line using only the printf function witout interrupts.
+## Header File:
+
+* [main.h](./main.h): Header file containing prototypes for all
+functions written in the project.
+
+| File                   | Prototype                                                           |
+| ---------------------- | ------------------------------------------------------------------- |
+| `0-binary_to_uint.c`   | `unsigned int binary_to_uint(const char *b);`                       |
+| `1-print_binary.c`     | `void print_binary(unsigned long int n);`                           |
+| `2-get_bit.c`          | `int get_bit(unsigned long int n, unsigned int index);`             |
+| `3-set_bit.c`          | `int set_bit(unsigned long int *n, unsigned int index);`            |
+| `4-clear_bit.c`        | `int clear_bit(unsigned long int *n, unsigned int index);`          |
+| `5-flip_bits.c`        | `unsigned int flip_bits(unsigned long int n, unsigned long int m);` |
+| `100-get_endianness.c` | `int get_endianness(void);`                                         |
+
+## Tasks:
+
+* **0. 0**
+  * [0-binary_to_uint.c](./0-binary_to_uint.c): C function that converts a binary number
+  to an `unsigned int`.
+  * The parameter `b` is a pointer to a string of `0` and `1` characters.
+  * If `b` is `NULL` or there are one or more characters in `b` that are
+  not `0` or `1` - returns `0`.
+  * Otherwise - returns the converted number.
+
+* **1. 1**
+  * [1-print_binary.c](./1-print_binary.c): C function that prints the binary representation
+  of a number.
+
+* **2. 10**
+  * [2-get_bit.c](./2-get_bit.c): C function that returns the value of a bit at a
+  given index.
+  * Indices start at `0`.
+  * If an error occurs - returns `-1`.
+  * Otherwise - returns the value of the bit at the given index.
+
+* **3. 11**
+  * [3-set_bit.c](./3-set_bit.c): C function that sets the value of a bit at a given index
+  to `1`.
+  * If an error occurs - returns `-1`.
+  * Otherwise - returns `1`.
+
+* **4. 100**
+  * [4-clear_bit.c](./4-clear_bit.c): C function that sets the value of a bit at
+  a given index to `0`.
+  * If an error occurs - returns `-1`.
+  * Otherwise - returns `1`.
+
+* **5. 101**
+  * [5-flip_bits.c](./5-flip_bits.c): C function that returns the number of bits needed
+  to be flipped to get from one number to another.
+
+* **6. Endianness**
+  * [100-get_endianness.c](./100-get_endianness.c): C function that checks the endianness.
+  * If big-endian - returns `0`.
+  * If little-endian - returns `1`.
+
+* **7. Crackme3**
+  * [101-password](./101-password): File containing the password for the
+  [crackme3](https://github.com/holbertonschool/0x13.c) executable.
