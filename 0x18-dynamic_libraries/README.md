@@ -23,7 +23,7 @@ char *_strchr(char *s, char c);
 unsigned int _strspn(char *s, char *accept);
 char *_strpbrk(char *s, char *accept);
 char *_strstr(char *haystack, char *needle);
-holberton.h: Header file containing the prototypes of all functions included in libholberton.so.
+main.h: Header file containing the prototypes of all functions included in libholberton.so.
 
 1. Without libraries what have we? We have no past and no future
 
